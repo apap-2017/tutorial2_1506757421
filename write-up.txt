@@ -1,0 +1,29 @@
+PROJECT HELLO WORLD
+	pertanyaan 1: mengganti @RequestMapping("/hello") menjadi @RequestMapping("/hello123")
+		tidak compile error
+		hello world tidak muncul
+		Mapping telah diganti ke /hello123 sehingga apabila pada browser diinput /hello aplikasi tidak bisa melakukan mapping
+	pertanyaan 2: mengganti nama method index() dengan nama method hello()
+		tidak compile error
+		hello world (first page) muncul
+	pertanyaan 3: mengganti string return type menjadi return hello123
+		tidak compile error
+		hello world tidak muncul
+		Tidak ada file hello123 di komputer sehingga terjadi error ketika dijalankan di browser
+		String yang di return menandakan nama file yang di request oleh http yang akan dicari di komputer
+REQUEST PARAMETER (QUERY STRING)
+	pertanyaan 1: mengubah nilai anotasi RequestMapping dari "/greeting" menjadi "/hello/greeting"
+		akses localhost:8080/hello/greeting?name=chanek di browser menampilkan view yang sama seperti localhost:8080/greeting?name=chanek yaitu "Selamat datang chanek!"
+	pertanyaan 2: mengubah method greeting() menjadi greeting(String name, Model model)
+		localhost:8080/greeting error, tidak bisa dibuka karena butuh parameter
+		Setelah tipe required parameter diubah menjadi false, view bisa ditampilkan. Nilai default parameter menjadi null, dan browser menampilkan "Selamat datang null!"
+	pertanyaan 3: mengubah defaultValue parameter name menjadi "dunia"
+		Setelah ada default value dan tipe required diganti false, apabila user tidak menginput parameter maka string name yang ditampilkan adalah default value, dan view menjadi "Selamat datang dunia!"
+	pertanyaan 4: penyebab tulisan "Sapaan untuk user" tidak muncul
+		"Sapaan untuk user" di override oleh "Selamat datang ${name}!"
+PATH VARIABLE
+	pertanyaan 1: akses localhost:8080/greeting/ setelah ditambahkan method greetingPath()
+		localhost:8080/greeting menghasilkan view browser "Selamat datang dunia!"
+		Setelah mapping greetingPath() diganti
+			localhost:8080/greeting error karena ada dua method yang digunakan untuk mapping path /greeting yaitu greeting() dan greetingPath()
+			localhost:8080/greeting/chanek menampilkan "Selamat datang chanek!"
