@@ -11,6 +11,7 @@ PROJECT HELLO WORLD
 		hello world tidak muncul
 		Tidak ada file hello123 di komputer sehingga terjadi error ketika dijalankan di browser
 		String yang di return menandakan nama file yang di request oleh http yang akan dicari di komputer
+		
 REQUEST PARAMETER (QUERY STRING)
 	pertanyaan 1: mengubah nilai anotasi RequestMapping dari "/greeting" menjadi "/hello/greeting"
 		akses localhost:8080/hello/greeting?name=chanek di browser menampilkan view yang sama seperti localhost:8080/greeting?name=chanek yaitu "Selamat datang chanek!"
@@ -21,6 +22,7 @@ REQUEST PARAMETER (QUERY STRING)
 		Setelah ada default value dan tipe required diganti false, apabila user tidak menginput parameter maka string name yang ditampilkan adalah default value, dan view menjadi "Selamat datang dunia!"
 	pertanyaan 4: penyebab tulisan "Sapaan untuk user" tidak muncul
 		"Sapaan untuk user" di override oleh "Selamat datang ${name}!"
+		
 PATH VARIABLE
 	pertanyaan 1: akses localhost:8080/greeting/ setelah ditambahkan method greetingPath()
 		localhost:8080/greeting menghasilkan view browser "Selamat datang dunia!"
